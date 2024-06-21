@@ -63,17 +63,8 @@ Do:
 <template>
   <el-cascader :props="props" />
 </template>
-<script lang="ts">
-  export default {
-    setup() {
-      return {
-        props: {
-          // props.
-          multiple: true,
-        },
-      }
-    },
-  }
+<script lang="ts" setup>
+  const props = { multiple: true }
 </script>
 ```
 
@@ -86,7 +77,7 @@ Don't do:
 </template>
 ```
 
-:::demo When using multiple selection, all selected tags will display by default. You can set `collapse-tags = true` to fold selected tags. You can check them when mouse hover collapse text by using `collapse-tags-tooltip` attribute.
+:::demo When using multiple selection, all selected tags will display by default. You can set `collapse-tags = true` to fold selected tags. You can set `max-collapse-tags` to show max tags number, default 1. You can check them when mouse hover collapse text by using `collapse-tags-tooltip` attribute.
 
 cascader/multiple-selection
 
@@ -168,6 +159,9 @@ cascader/panel
 | popper-append-to-body ^(deprecated) | whether to append the popper menu to body. If the positioning of the popper is wrong, you can try to set this prop to false                                                      | ^[boolean]                                                    | true    |
 | tag-type                            | tag type                                                                                                                                                                         | ^[enum]`'success' \| 'info' \| 'warning' \| 'danger'`         | info    |
 | validate-event                      | whether to trigger form validation                                                                                                                                               | ^[boolean]                                                    | true    |
+| max-collapse-tags ^(2.3.10)         | The max tags number to be shown. To use this, `collpase-tags` must be true                                                                                                       | ^[number]                                                     | 1       |
+| empty-values ^(2.7.0)               | empty values of component, [see config-provider](/en-US/component/config-provider#empty-values-configurations)                                                                   | ^[array]                                                      | —       |
+| value-on-clear ^(2.7.0)             | clear return value, [see config-provider](/en-US/component/config-provider#empty-values-configurations)                                                                          | ^[string] / ^[number] / ^[boolean] / ^[Function]              | —       |
 
 ### Cascader Events
 
